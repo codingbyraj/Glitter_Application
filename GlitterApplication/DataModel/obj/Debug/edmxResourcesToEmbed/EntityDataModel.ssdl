@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GlitterDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Follow">
+    <Key>
+      <PropertyRef Name="FollowId" />
+    </Key>
+    <Property Name="FollowId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FollowerId" Type="int" Nullable="false" />
+    <Property Name="FollowingId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HashTag">
+    <Key>
+      <PropertyRef Name="HashTagId" />
+    </Key>
+    <Property Name="HashTagId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HashTagContent" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HashTagTweetMap">
+    <Key>
+      <PropertyRef Name="HashTagTweetMapId" />
+    </Key>
+    <Property Name="HashTagTweetMapId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TweetId" Type="int" Nullable="false" />
+    <Property Name="HashTagId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reaction">
+    <Key>
+      <PropertyRef Name="ReactionId" />
+    </Key>
+    <Property Name="ReactionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="TweetId" Type="int" Nullable="false" />
+    <Property Name="LikeFlag" Type="bit" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Tweet">
+    <Key>
+      <PropertyRef Name="TweetId" />
+    </Key>
+    <Property Name="TweetId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TweetContent" Type="nvarchar" MaxLength="240" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Time" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContactNumber" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProfileImage" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FollowingCount" Type="int" />
+    <Property Name="FollowerCount" Type="int" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK_Follow_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Follow" Type="Self.Follow" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Follow">
+        <PropertyRef Name="FollowerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Follow_User1">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Follow" Type="Self.Follow" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Follow">
+        <PropertyRef Name="FollowingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HashTagTweetMap_HashTag">
+    <End Role="HashTag" Type="Self.HashTag" Multiplicity="1" />
+    <End Role="HashTagTweetMap" Type="Self.HashTagTweetMap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HashTag">
+        <PropertyRef Name="HashTagId" />
+      </Principal>
+      <Dependent Role="HashTagTweetMap">
+        <PropertyRef Name="HashTagId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HashTagTweetMap_Tweet">
+    <End Role="Tweet" Type="Self.Tweet" Multiplicity="1" />
+    <End Role="HashTagTweetMap" Type="Self.HashTagTweetMap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tweet">
+        <PropertyRef Name="TweetId" />
+      </Principal>
+      <Dependent Role="HashTagTweetMap">
+        <PropertyRef Name="TweetId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reaction_Tweet">
+    <End Role="Tweet" Type="Self.Tweet" Multiplicity="1" />
+    <End Role="Reaction" Type="Self.Reaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tweet">
+        <PropertyRef Name="TweetId" />
+      </Principal>
+      <Dependent Role="Reaction">
+        <PropertyRef Name="TweetId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reaction_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Reaction" Type="Self.Reaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Reaction">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tweet_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Tweet" Type="Self.Tweet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Tweet">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GlitterDBModelStoreContainer">
+    <EntitySet Name="Follow" EntityType="Self.Follow" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HashTag" EntityType="Self.HashTag" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HashTagTweetMap" EntityType="Self.HashTagTweetMap" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reaction" EntityType="Self.Reaction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tweet" EntityType="Self.Tweet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Follow_User" Association="Self.FK_Follow_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Follow" EntitySet="Follow" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Follow_User1" Association="Self.FK_Follow_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="Follow" EntitySet="Follow" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HashTagTweetMap_HashTag" Association="Self.FK_HashTagTweetMap_HashTag">
+      <End Role="HashTag" EntitySet="HashTag" />
+      <End Role="HashTagTweetMap" EntitySet="HashTagTweetMap" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HashTagTweetMap_Tweet" Association="Self.FK_HashTagTweetMap_Tweet">
+      <End Role="Tweet" EntitySet="Tweet" />
+      <End Role="HashTagTweetMap" EntitySet="HashTagTweetMap" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reaction_Tweet" Association="Self.FK_Reaction_Tweet">
+      <End Role="Tweet" EntitySet="Tweet" />
+      <End Role="Reaction" EntitySet="Reaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reaction_User" Association="Self.FK_Reaction_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Reaction" EntitySet="Reaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tweet_User" Association="Self.FK_Tweet_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Tweet" EntitySet="Tweet" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

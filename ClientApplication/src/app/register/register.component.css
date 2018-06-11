@@ -1,0 +1,16 @@
+.well{
+    color: black
+}
+.head{
+    color: darkblue
+}
+
+td{
+    text-align: center;
+    font-size: 16px;
+    vertical-align: middle;
+}
+.btn-register{
+    /* width: 50%;     */
+    min-width: 150px;;
+}

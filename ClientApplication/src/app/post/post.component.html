@@ -1,0 +1,15 @@
+<div class="search-section">
+  <input type="text"  class="form-control txt-search-people"  placeholder="Search Here"  [(ngModel)]="searchText">    
+    <input class="btn btn-primary"  type="button"  value="Search"  (click)="doSearch()">
+      </div>
+      <br>
+      <table class="search-result"  *ngIf="searchedPost">
+        <tr>
+          <th>Name</th>
+          <th>Hashtag</th>
+        </tr>
+        <tr *ngFor="let post of searchedPost"  class="search-details">
+          <td class="name">{{post.Name}}</td>
+            <td>{{post.TweetContent}}</td>
+            </tr>
+            </table>

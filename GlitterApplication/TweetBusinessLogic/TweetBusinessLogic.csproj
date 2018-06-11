@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FB4D07BC-1D90-481F-B303-E5949E3ECAA7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TweetBusinessLogic</RootNamespace>
+    <AssemblyName>TweetBusinessLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="TweetBs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{d45ce5e4-b28d-4126-a887-d8a99e72eec0}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HashTagAccess\HashTagAccess.csproj">
+      <Project>{b1925ac6-af62-4df1-aa80-f74167f54daa}</Project>
+      <Name>HashTagAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HashTagTweetMapsDTO\HashTagTweetMapsDTO.csproj">
+      <Project>{aa38f26d-304c-4a72-a1ec-f4ed78bc40ac}</Project>
+      <Name>HashTagTweetMapsDTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TagTweetMappingAccess\TagTweetMappingAccess.csproj">
+      <Project>{683e5c7e-5071-4c8d-bb07-c1ec57246f5e}</Project>
+      <Name>TagTweetMappingAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TweetAccess\TweetAccess.csproj">
+      <Project>{ef9a5f40-3141-4dc0-8fd8-8eed483e690c}</Project>
+      <Name>TweetAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TweetsDTO\TweetsDTO.csproj">
+      <Project>{90bd00ff-0ef7-4775-b8dd-3da12f8b6e9a}</Project>
+      <Name>TweetsDTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

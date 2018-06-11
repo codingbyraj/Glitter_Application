@@ -1,0 +1,5 @@
+D:\Exit-Test\second-week\GlitterApplication\Tweet\bin\Debug\Tweet.dll
+D:\Exit-Test\second-week\GlitterApplication\Tweet\bin\Debug\Tweet.pdb
+D:\Exit-Test\second-week\GlitterApplication\Tweet\obj\Debug\Tweet.csprojResolveAssemblyReference.cache
+D:\Exit-Test\second-week\GlitterApplication\Tweet\obj\Debug\Tweet.dll
+D:\Exit-Test\second-week\GlitterApplication\Tweet\obj\Debug\Tweet.pdb

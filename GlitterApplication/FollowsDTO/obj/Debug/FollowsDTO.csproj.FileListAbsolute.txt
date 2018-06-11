@@ -1,0 +1,14 @@
+E:\ExitTest\abhishek\Backups\version3\GlitterApplication-Mukesh\GlitterApplication\FollowsDTO\bin\Debug\FollowsDTO.dll
+E:\ExitTest\abhishek\Backups\version3\GlitterApplication-Mukesh\GlitterApplication\FollowsDTO\bin\Debug\FollowsDTO.pdb
+E:\ExitTest\abhishek\Backups\version3\GlitterApplication-Mukesh\GlitterApplication\FollowsDTO\obj\Debug\FollowsDTO.csprojResolveAssemblyReference.cache
+E:\ExitTest\abhishek\Backups\version3\GlitterApplication-Mukesh\GlitterApplication\FollowsDTO\obj\Debug\FollowsDTO.dll
+E:\ExitTest\abhishek\Backups\version3\GlitterApplication-Mukesh\GlitterApplication\FollowsDTO\obj\Debug\FollowsDTO.pdb
+D:\Final-Test\backend\version-9\GlitterApplication\GlitterApplication\FollowsDTO\bin\Debug\FollowsDTO.dll
+D:\Final-Test\backend\version-9\GlitterApplication\GlitterApplication\FollowsDTO\bin\Debug\FollowsDTO.pdb
+D:\Final-Test\backend\version-9\GlitterApplication\GlitterApplication\FollowsDTO\obj\Debug\FollowsDTO.csprojResolveAssemblyReference.cache
+D:\Final-Test\backend\version-9\GlitterApplication\GlitterApplication\FollowsDTO\obj\Debug\FollowsDTO.dll
+D:\Final-Test\backend\version-9\GlitterApplication\GlitterApplication\FollowsDTO\obj\Debug\FollowsDTO.pdb
+C:\Users\abhishekraj\Desktop\final\GlitterApplication\FollowsDTO\bin\Debug\FollowsDTO.dll
+C:\Users\abhishekraj\Desktop\final\GlitterApplication\FollowsDTO\bin\Debug\FollowsDTO.pdb
+C:\Users\abhishekraj\Desktop\final\GlitterApplication\FollowsDTO\obj\Debug\FollowsDTO.dll
+C:\Users\abhishekraj\Desktop\final\GlitterApplication\FollowsDTO\obj\Debug\FollowsDTO.pdb

@@ -1,0 +1,10 @@
+.analytics-section{
+    margin-top: 100px;
+}
+
+.analytics-section ul{
+    list-style: none;
+}
+.analytics-section ul li{
+    font-size: 18px;    
+}

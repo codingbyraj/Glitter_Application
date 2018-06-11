@@ -1,0 +1,19 @@
+<div class="search-section">
+  <input type="text" class="form-control txt-search-people" placeholder="Search Here" [(ngModel)]="searchText">  
+  <input class="btn btn-primary" type="button" value="Search" (click)="getSearchedResult()">
+</div>
+<br>
+<table class="search-result" *ngIf="searchedPeople">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Follow Option</th>
+  </tr>
+  <tr *ngFor="let people of searchedPeople" class="search-details">
+    <td class="name">{{people.Name}}</td>
+    <td class="email">{{people.Email}}</td>
+    <td class="follow-option">
+      <span (click)="addFollowing(people.UserId)">Follow</span>
+    </td>
+  </tr>
+</table>

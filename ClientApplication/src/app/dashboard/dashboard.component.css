@@ -1,0 +1,37 @@
+.btn-logout{
+    cursor: pointer;    
+}
+
+.user-options{    
+    position: fixed;
+    z-index: 1;
+    left: 29%;
+    border-radius:50px;     
+    width: 100%;
+}
+
+.nav-bar{
+    list-style: none;
+}
+.nav-bar li {
+    display: inline;
+    margin-right: 10px;
+    border: 1px solid;
+}
+
+.user-options ul{
+    background: black;    
+    border-radius: 15px;    
+}
+
+.user-options ul li{
+    color: black;
+}
+.user-options ul li a{
+    color:white;
+}
+.welcome-user{
+    margin-top: 60px;
+    position: fixed;
+    right:20px;
+}

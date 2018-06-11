@@ -1,0 +1,13 @@
+
+.txt-search-people{
+    width: 250px;
+}
+.search-result{
+    /* border:1px solid; */
+    box-shadow: 0px 0px 3px grey;
+}
+
+.search-details td, th{
+    border: 1px solid;
+    padding: 10px;
+}

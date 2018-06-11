@@ -1,0 +1,42 @@
+.show-followings{
+    width: 55%;
+}
+
+.show-followings h1{
+    margin-top:100px;
+}
+
+.following-section:first-child{
+    margin-top:15px;
+}
+
+.following-section{
+    border: 1px solid grey;    
+    list-style: none;
+    margin-top:10px;
+    padding: 3px;
+    position: relative;
+}
+
+.follwing_people_image img{
+    width: 60px;
+    height: 60px;
+    border: 1px solid;
+    padding: 10px;
+}
+.follwing_content{
+    font-size: 18px;
+    padding: 10px;
+    margin-left:24px;
+}
+
+.btn-unfollow{
+    position: absolute;
+    right: 20px;
+    top: 17px;
+    border: 1px solid white;
+    border-radius: 5px;
+    height: 31px;
+    background-color: #E15A97;
+    color: white;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Registration Page - Glitter App</title>
+</head>
+
+<body style="padding-top:20px">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="well">
+      <table class="table table-bordered">
+        <thead class="head">
+          <tr>
+            <th colspan="2">
+              <b>User Registration!</b>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Name</td>
+            <td>
+              <input [(ngModel)]="name" type="text" placeholder="Enter Name" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td>
+              <input [(ngModel)]="email" type="text" placeholder="Enter email" class="form-control">              
+            </td>
+          </tr>
+          <tr>
+            <td>Country</td>
+            <td>
+              <input [(ngModel)]="country" type="text" placeholder="Enter Country" class="form-control">              
+            </td>
+          </tr>
+          <tr>
+            <td>Profile Image</td>
+            <td>
+              <input type="file" placeholder="Enter Image" class="form-control" (change)="uploadFile($event)">
+              
+            </td>
+          </tr>
+          <tr>
+            <td>Contact Number</td>
+            <td>
+              <input [(ngModel)]="contactNumber" type="text" placeholder="Enter Mobile Number" class="form-control">              
+            </td>
+          </tr>
+                    
+          <tr>
+            <td>Password</td>
+            <td>
+              <input [(ngModel)]="password" type="password" placeholder="Enter password" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>Confirm Password</td>
+            <td>
+              <input [(ngModel)]="confirmPassword" type="password" placeholder="Confirm password" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <button class="btn-register btn btn-primary" (click)="doRegister()">Register</button>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <button class="btn btn-link" (click)="redirectToLogin()">Already Registered?</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<div class="clearfix">
+  <!-- show tweet section -->
+  <div class="show-tweet left">
+    <ul>
+      <li *ngFor="let tweet of tweets" class="tweet-section">
+        <span class="tweeted_people_image">
+          <img [src]="imageSource" alt="">
+        </span>
+        <span class="tweet_content"> {{tweet.TweetContent}}</span>
+
+      </li>
+    </ul>
+  </div>
+
+
+  <div class="show-followers">
+    <h1>Your followers</h1>
+    <ul>
+      <li *ngFor="let follower of followers" class="follower-section">
+        <span class="follwer_people_image">
+          <img [src]="imageSource" alt="">
+        </span>
+        <span class="follwer_content">{{follower.Name}}</span>
+        <span class="follow-option" (click)="addFollowing(follower.UserId)">Follow</span>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+</div>

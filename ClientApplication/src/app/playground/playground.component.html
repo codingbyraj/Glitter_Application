@@ -1,0 +1,35 @@
+<div class="clearfix">
+  <!-- show tweet section -->
+  <div class="show-tweet left">
+    <ul>
+      <li *ngFor="let tweet of tweets" class="tweet-section">
+        <span class="tweeted_people_image">
+          <img [src]="imageSource" alt="">
+        </span>
+        <span class="tweet_content"> {{tweet.TweetContent}}</span>
+
+        <!-- like and dislike option -->
+        <span class="like-option">
+          <span *ngIf="tweet.LikeFlag; else else_like" #else>Liked</span>
+          <ng-template #else_like>
+            <a href="">Like</a>            
+          </ng-template>
+        </span>
+        <!-- give delete and edit option -->
+        <span class="edit-delete-section" *ngIf="currentUser == tweet.Email">
+          <a href="">Edit</a> |
+          <a href="">Delete</a>
+        </span>
+      </li>
+    </ul>
+  </div>
+  <!-- compose tweet section -->
+  <div class="compose-tweet right">
+    <h4>Compose New Tweet</h4>
+    <!-- <input type="text"  /> -->
+    <textarea cols="30" rows="6"  [(ngModel)]="TweetContent"  placeholder="Enter tweet"  class="form-control txt_tweet"></textarea>
+    <button class="btn btn-info"  (click)="newTweet()">Compose New Tweet</button>
+</div>
+
+
+</div>

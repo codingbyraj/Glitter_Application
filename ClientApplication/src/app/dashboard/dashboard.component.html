@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dashboard</title>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="col-sm-12">
+      <nav class="user-options">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav">
+            <li>
+              <a routerLink="playground">PlayGround</a>
+            </li>
+            <li>
+              <a routerLink="followers">Followers
+                <span *ngIf="followers; else else_condition_followers">({{followers}})</span>
+                <ng-template #else_condition_followers>(0)</ng-template>
+              </a>
+            </li>
+            <li>
+              <a routerLink="followings">Following
+                <span *ngIf="followings; else else_condition_followings">({{followings}})</span>
+              </a>
+              <ng-template #else_condition_followings>(0)</ng-template>
+            </li>
+            <li>
+              <a routerLink="search">Search</a>
+            </li>
+            <li>
+              <a routerLink="analytics">Analytics</a>
+            </li>
+            <li>
+              <a class="btn-logout" (click)="logout()">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <p class="welcome-user right">
+        <b>Welcome</b> {{currentUser}}</p>
+    </div>
+
+    <router-outlet></router-outlet>
+  </div>
+
+</body>
+
+</html>

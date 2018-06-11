@@ -1,0 +1,16 @@
+.well{
+    color: black
+}
+.head{
+    color: darkblue
+}
+
+td{
+    text-align: center;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.btn-login{
+    min-width: 130px;;
+}
